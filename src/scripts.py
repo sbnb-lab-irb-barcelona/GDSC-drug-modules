@@ -12,6 +12,13 @@ from tqdm import tqdm
 import networkx as nx
 from diamond import DIAMOnD
 
+def make_output_folders():
+    folders = ['../results/','../results/diamond/','../results/diamond/PCM','../results/diamond/NCM','../results/hotnet/','../results/hotnet/PCM','../results/hotnet/','../results/reactome_gsea','../results/final_modules']
+    for folder in folders:
+        try:
+            os.mkdir(folder)
+        except:
+            continue
 def get_correlations(expr_df,drug_df,write=None):
 
     stack = []
